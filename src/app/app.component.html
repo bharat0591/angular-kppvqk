@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  demo1TabIndex: {{ demo1TabIndex }}
+  <mat-tab-group [(selectedIndex)]="demo1TabIndex" (selectedIndexChange)="onChaageTabs($event)">
+    <mat-tab *ngFor="let tab of tabs" [label]="tab.name">
+      <formly-form [form]="form" [model]="model" [fields]="tab.fields">
+      </formly-form>
+    </mat-tab>
+  </mat-tab-group>
+  {{ model | json }}
+</form>
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
